@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+//simple comentario basura
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
