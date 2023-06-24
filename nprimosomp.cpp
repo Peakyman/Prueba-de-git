@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <omp.h>
+#include <ctime>
 using namespace std;
 
 int main() {
+	clock_t inicio = clock(); //temporizador
 	int cantPrimos=0; //contador de numeros primos
 	ios_base::sync_with_stdio(false); //desactiva el vaciado automático del búfer de salida
 	cin.tie(NULL); //desactiva la sincronización con los flujos de entrada/salida de C en C++
@@ -33,5 +35,9 @@ int main() {
 	}
     
     cout<<"\nLa cantidad de numeros primos es de "<<cantPrimos<<endl;
+    
+    clock_t fin = clock();
+    double tiempo_transcurrido = double(fin - inicio) / CLOCKS_PER_SEC;
+    printf("Tiempo transcurrido: %.2f minutos\n", tiempo_transcurrido / 60.0);
     return 0;
 }
